@@ -1,0 +1,15 @@
+---
+- name: Ansible Loops
+  hosts: Ubuntu0 Ubuntu1
+  become: yes
+  tasks:
+    - name: Create a File
+      shell: echo 'Beginning File ..' > /home/ennil/Desktop/loops.txt
+    - name: Install the Packages
+      # write some items to a file, run the {{item}} module, passes in 3 points of data everytime the loops executes..
+      shell: echo "{{item}}" >> /home/ennil/Desktop/loops.txt
+      # with these items, execute {{item)) (n) times.
+      with_items:
+        - vim
+        - nano
+        - python

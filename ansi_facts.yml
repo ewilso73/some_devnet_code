@@ -1,0 +1,17 @@
+---
+- name: a playbook which displays Ubuntu OS facts
+  hosts: Ubuntu0 Ubuntu1
+  # ansible ubuntu -m setup
+  # ansible ubuntu -m setup -a "filter=*ansible_os_family"
+  # ansible ubuntu -m setup -a "filter=*ansible_user_id"
+  tasks:
+   - name: print OS family to file
+     shell: echo "the family is {{ansible_os_family}} !!" > /home/{{ansible_user_id}}/Desktop/what\'s_the_family?.txt
+   - name: print Defualt Machine NICard name to console
+     debug: msg="{{ansible_default_ipv4.interface}}"
+   - name: register the "ls" result variable
+     command: "ls"
+     register: dirs
+   - name: print the "dirs" variable from last step to console
+     debug:
+       msg: "{{dirs}}"

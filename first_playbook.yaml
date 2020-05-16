@@ -1,0 +1,8 @@
+# ansible playbooks are based off dashes and spacing!
+---
+
+- hosts: default
+
+  tasks:
+
+    - ping: 

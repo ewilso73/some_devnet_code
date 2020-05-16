@@ -1,0 +1,24 @@
+---
+people:
+- Id: 1
+  Code: 524.37
+  FirstName: Ennil
+  LastName: Wilson
+  Email: jijoe74@yahoo.com
+  Active: true
+- Id: 2
+  Code: 281.34
+  FirstName: John
+  LastName: Todd
+  Email: jtodd1234@aol.com
+  Active: true
+- Id: 3
+  Code: 813.09
+  FirstName: Tucker
+  LastName: Rosbern
+  Email: T.Rosbern@outlook.com
+  Active: false
+...
+--- #This is the start of a new document in YAML
+item1: item1value
+item2: item2value

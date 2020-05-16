@@ -1,0 +1,11 @@
+---
+- hosts: default
+  gather_facts: false
+  tasks:
+    - name: Check if server is alive
+      ping:
+      tags: check
+
+    - name: reload PHP
+      shell: systemctl reload php-fpm
+      tags: reload-php 

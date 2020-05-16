@@ -1,0 +1,17 @@
+# tells ansible when to proceed with something..
+---
+- hosts: linuxhosts
+  # become the root user..
+  become: true
+  tasks:
+    - name: install nginx on Ubuntu0 and Ubuntu1
+      # apt for ubuntu ... yum for centos
+      apt: name=nginx state=latest
+      # ignore the centos error, and proceed to the next task.
+      ignore_errors: yes
+      register: results
+
+      #- name: install nginx on centos
+      #yum: name=nginx state=latest
+      #install nginx on centos, when register results has failed.
+      #when: results|failed
